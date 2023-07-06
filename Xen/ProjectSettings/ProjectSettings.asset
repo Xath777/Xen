@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Xath
   productName: Xen
   defaultCursor: {fileID: 2800000, guid: c978a0a8936df5c429d0a01ccfa8c1db, type: 3}
   cursorHotspot: {x: 0, y: 0}
