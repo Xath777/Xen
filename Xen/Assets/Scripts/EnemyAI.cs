@@ -13,37 +13,44 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float distanceBtwn = 10f;
     [SerializeField] private GameObject player;
     private float distance;
+    private GameObject attackArea = default;
+    private bool attacking = false;
+    private float timeToAttack = 3.25f;
+    private float timer = 0f;
+
+    void Start()
+    {
+        attackArea = transform.GetChild(0).gameObject;
+    }
 
     void Update()
     {
-        if(isHit)
-        {  
-            StartCoroutine(Poise());
+        if (distance < 2)
+        {
+            StartCoroutine(Wait());
         }
 
-        else
+        if (attacking)
         {
-            distance = Vector2.Distance(transform.position, player.transform.position);
-            Vector2 direction = player.transform.position - transform.position;
+            timer += Time.deltaTime;
 
-            if(distance < distanceBtwn)
+            if (timer >= timeToAttack)
             {
-                transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-            } 
-        }
-        
-        Flip();
-    }
+                timer = 0;
+                attacking = false;
+                attackArea.SetActive(attacking);
 
-    private void Flip()
-    {
-        if (rb.position.x > 0f && isPosRight)
-        {
-            isPosRight = !isPosRight;
-            Vector2 localScale = transform.localScale;
-            localScale.x = localScale.x * -1f;
-            transform.localScale = localScale;
+            }
         }
+
+        
+        distance = Vector2.Distance(transform.position, player.transform.position);
+        Vector2 direction = player.transform.position - transform.position;
+
+        if(distance < distanceBtwn)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        }  
     }
 
     public void SetHit(bool tf)
@@ -51,11 +58,15 @@ public class EnemyAI : MonoBehaviour
         isHit = tf;
     }
 
-    public IEnumerator Poise()
+    private void Attack()
     {
-        rb.velocity = new Vector2(0, 0);
-        yield return new WaitForSeconds(0.1f);
-        isPoising = false;
-        isHit = false;      
+        attacking = true;
+        attackArea.SetActive(attacking);
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(.8f);
+        Attack();
     }
 }
