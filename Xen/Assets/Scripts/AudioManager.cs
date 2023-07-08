@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField]
     private AudioClip audioClip;
+
     private void Awake()
     {
         if (instance == null)

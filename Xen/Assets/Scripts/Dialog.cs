@@ -8,6 +8,8 @@ public class Dialog : MonoBehaviour
     public string[] lines;
     public float textSpeed;
 
+    public bool end = false;
+
     private int index;
     
     void StartDialogue()
@@ -28,11 +30,16 @@ public class Dialog : MonoBehaviour
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        StartCoroutine(Delete());
+        
+        if(!end)
+        {
+            StartCoroutine(Delete());
+        }
     }
     IEnumerator Delete()
     {
         yield return new WaitForSeconds(2f);
+        
         Destroy(gameObject);
     }
 }

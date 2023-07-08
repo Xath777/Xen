@@ -44,7 +44,7 @@ public class BossHealth : MonoBehaviour
         Time.timeScale = 1f;
 
         //LAST SCENE ER JONNO
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(4);
         
     }
 }   
