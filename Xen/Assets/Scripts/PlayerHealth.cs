@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int health = 100;
     [SerializeField] private GameObject[] hearts;
@@ -26,9 +26,9 @@ public class TowerHealth : MonoBehaviour
 
         this.health -= amount;
         Destroy(hearts[i].gameObject);
-        Anim.Play("Shake_1");
-        Anim_T.Play("Hit");
-        sfx.Play();
+        //Anim.Play("Shake_1");
+        //Anim_T.Play("Hit");
+        //sfx.Play();
         i++;
     }
     private void Die()

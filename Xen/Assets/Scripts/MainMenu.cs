@@ -13,7 +13,9 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
     void Start()
-    { 
+    {
+        if(AudioManager.instance != null)
+        AudioManager.instance.StopAudio();
         track01.Play();
         StartCoroutine(Close());
 

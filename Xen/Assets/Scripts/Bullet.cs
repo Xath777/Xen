@@ -4,17 +4,39 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    GameObject target;
     public float speed;
     private Rigidbody2D rb;
-    
+    [SerializeField] private AudioSource atkHit;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.right * speed;
+        target = GameObject.FindGameObjectWithTag("Player");
+        Vector2 direction = (target.transform.position - transform.position).normalized * speed;
+        rb.velocity = new Vector2(direction.x, direction.y);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        PlayerHealth health_player = other.GetComponent<PlayerHealth>();
+        Health health = other.GetComponent<Health>();
+        EnemyMovement movement = other.GetComponent<EnemyMovement>();
+        if (other.GetComponent<Health>() != null)
+        {
+            atkHit.Play();
+            health.Damage(1);
+            movement.SetHit(true);
+        } 
+        if (other.GetComponent<PlayerHealth>() != null)
+        {
+            atkHit.Play();
+            health_player.Damage(1);
+            movement.SetHit(true);
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         Destroy(gameObject);
     }
 }

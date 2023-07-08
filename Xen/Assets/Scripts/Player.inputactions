@@ -68,10 +68,10 @@
                 {
                     "name": "right",
                     "id": "7555d70c-4c99-4e19-9c58-34376e1b9b50",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard_2",
+                    "groups": "Keyboard_1",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -90,10 +90,10 @@
                 {
                     "name": "down",
                     "id": "2be8ea92-739e-4456-b937-cc6059bfb1f8",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard_2",
+                    "groups": "Keyboard_1",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -112,10 +112,10 @@
                 {
                     "name": "left",
                     "id": "b2b4c922-d807-408d-accb-ec34751216c9",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard_2",
+                    "groups": "Keyboard_1",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -134,10 +134,10 @@
                 {
                     "name": "up",
                     "id": "f2d9bdf8-23a7-4a3d-8d4d-90b93875718f",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard_2",
+                    "groups": "Keyboard_1",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -190,17 +190,6 @@
                     "name": "",
                     "id": "2e7b379e-18f2-4b9c-9998-f969d682a78b",
                     "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard_1",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3bf229fa-082c-441d-a633-39e5ec5bebfd",
-                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard_1",
