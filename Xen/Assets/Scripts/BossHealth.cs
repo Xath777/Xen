@@ -7,8 +7,6 @@ public class BossHealth : MonoBehaviour
 {
     [SerializeField] private int health = 100;
     [SerializeField] private GameObject[] hearts;
-    [SerializeField] public Animator Anim;
-    [SerializeField] public Animator Anim_T;
     [SerializeField] private AudioSource sfx;
 
     RandomSpawner rs;
@@ -17,7 +15,7 @@ public class BossHealth : MonoBehaviour
     {
         if(health <= 0)
         {
-            Die();                  
+            Die();            
         }
         if (health < 4)
         {
@@ -33,18 +31,15 @@ public class BossHealth : MonoBehaviour
 
         this.health -= amount;
         Destroy(hearts[i].gameObject);
-        //Anim.Play("Shake_1");
-        //Anim_T.Play("Hit");
-        //sfx.Play();
+
         i++;
     }
     private void Die()
     {  
+        sfx.Play();
         Destroy(gameObject);
         Time.timeScale = 1f;
-
-        //LAST SCENE ER JONNO
         SceneManager.LoadScene(4);
-        
     }
+    
 }   
