@@ -8,18 +8,14 @@ public class BossHealth : MonoBehaviour
     [SerializeField] private int health = 100;
     [SerializeField] private GameObject[] hearts;
     [SerializeField] private AudioSource sfx;
-
-    RandomSpawner rs;
+    [SerializeField] private AudioSource track01;
+    [SerializeField] private GameObject startingTransition;
     int i = 0;
     void Update()
     {
         if(health <= 0)
         {
-            Die();            
-        }
-        if (health < 4)
-        {
-            rs.multiplier = 0.7777f;
+            Die();      
         }
     }
     public void Damage(int amount)
@@ -35,11 +31,9 @@ public class BossHealth : MonoBehaviour
         i++;
     }
     private void Die()
-    {  
-        sfx.Play();
+    {
         Destroy(gameObject);
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(6);
     }
     
 }   

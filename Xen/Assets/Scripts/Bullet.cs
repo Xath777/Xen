@@ -8,12 +8,25 @@ public class Bullet : MonoBehaviour
     public float speed;
     private Rigidbody2D rb;
     [SerializeField] private AudioSource atkHit;
+    public bool turrentDOWN = false;
+    public bool turrentLEFT = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player");
-        Vector2 direction = (target.transform.position - transform.position).normalized * speed;
-        rb.velocity = new Vector2(direction.x, direction.y);
+        if(turrentDOWN)
+        {
+            rb.velocity = new Vector2(0, -1);
+        }
+        else if(turrentLEFT)
+        {
+            rb.velocity = new Vector2(-1, 0);
+        }
+        else
+        {
+            Vector2 direction = (target.transform.position - transform.position).normalized * speed;
+            rb.velocity = new Vector2(direction.x, direction.y);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -33,6 +46,7 @@ public class Bullet : MonoBehaviour
             health_player.Damage(1);
             movement.SetHit(true);
         }
+        Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

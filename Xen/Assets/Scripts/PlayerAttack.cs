@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     private GameObject attackArea = default;
     private bool attacking = false;
-    private float timeToAttack = 0.4f;
+    private float timeToAttack = 0.2f;
     private float timer = 0f;
     [SerializeField] Animator anim;
     [SerializeField] private GameObject atk;
