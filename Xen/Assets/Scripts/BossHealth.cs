@@ -33,7 +33,7 @@ public class BossHealth : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(11);
     }
     
 }   
