@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private AudioSource atkHit;
     public bool turrentDOWN = false;
     public bool turrentLEFT = false;
+    public bool BossBullet = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -46,6 +47,7 @@ public class Bullet : MonoBehaviour
             health_player.Damage(1);
             movement.SetHit(true);
         }
+        if(!BossBullet)
         Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision)

@@ -5824,6 +5824,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6770999798272807193, guid: 3732d5ea7bac8224dbd66eea4d73d4dc, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6770999798272807197, guid: 3732d5ea7bac8224dbd66eea4d73d4dc, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
       value: 15
@@ -5959,6 +5963,10 @@ PrefabInstance:
     - target: {fileID: 6770999798272807199, guid: 3732d5ea7bac8224dbd66eea4d73d4dc, type: 3}
       propertyPath: BypassListenerEffects
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770999798884029304, guid: 3732d5ea7bac8224dbd66eea4d73d4dc, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7045819680668590400, guid: 3732d5ea7bac8224dbd66eea4d73d4dc, type: 3}
       propertyPath: gameOver
